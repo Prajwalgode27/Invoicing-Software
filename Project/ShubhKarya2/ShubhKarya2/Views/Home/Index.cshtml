@@ -1,0 +1,652 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Page/Reg.js"></script>
+<script src="~/Content/Page/Member.js"></script>
+<script src="~/Content/Page/Membership.js"></script>
+<script src="~/Content/Page/Package.js"></script>
+<style>
+    img {
+        max-width: 100%;
+        cursor: pointer;
+    }
+
+    .gallery {
+        background-color: #dbddf1;
+        padding: 80px 0;
+    }
+
+        .gallery img {
+            background-color: #ffffff;
+            padding: 15px;
+            width: 100%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+    #gallery-modal .modal-img {
+        width: 100%;
+    }
+
+
+    .bestSeller img {
+        min-width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .auto-input {
+        background: radial-gradient( circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+        /*        -webkit-background-clip: text;*/
+        -webkit-text-fill-color: transparent;
+    }
+
+    .promotion {
+        /*        background: radial-gradient( circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;*/
+        color: #9c0000;
+    }
+
+    .auto-inputText {
+        background: radial-gradient( circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+        /*        -webkit-background-clip: text;
+    */ -webkit-text-fill-color: transparent;
+    }
+
+    .auto-inputText2 {
+        background: radial-gradient( circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+        /*        -webkit-background-clip: text;
+    */ -webkit-text-fill-color: transparent;
+    }
+
+    .typed-cursor {
+        display: none;
+    }
+
+    .h6 {
+        align-items: start
+    }
+    /*form {
+            border-color:*/
+    /* background-color:cornsilk;*/
+    /*border-block-style:outset;
+            border-radius: 5px;
+            font-family: Arial;
+            padding: 10px;
+            width: 200px;
+        }*/
+</style>
+<!--<div class="jumbotron jumbotron-fluid page-header">
+    <div class="container text-center py-5">
+        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Register Now</a>-->
+@*<h1 class="text-white display-3 mt-lg-5">Welcome To ShubhKarya</h1>*@
+@*<div class="d-inline-flex align-items-center text-white">
+        <p class="m-0"><a class="text-white" href="">Home</a></p>
+        <i class="fa fa-circle px-3"></i>
+        <p class="m-0">Product</p>
+    </div>*@
+<!--</div>-->
+@*</div>*@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="row" style=" margin-top: -44px;">
+    <div class="col-md-6">
+        <div class="card" style="margin-top: 110px;">
+            <div class="card-body">
+                <img class="w-100" src="~/Content/Img/Banner.jpg" alt="not found" style="margin-top:5px; height:635px;" />
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card" style="margin-top:110px;">
+            <div class="card-body">
+                <div class="card-body row">
+                    <h5 class="modal-title " style="color: #FD2C79; font: 100;" id="exampleModalLabel">Registration Form</h5>
+                    @*<label>Enter Your Full Name</label>*@
+                    <div class="col-sm-12">
+                        <input type="text" style="max-width:100%" class="form-control p-4 mb-3" id="txtname" placeholder="Full Name" required="required" data-validation-required-message="Please enter your name" />
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Email</label>
+                        <input type="email" style="max-width:100%" class="form-control p-4" id="txtmail" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Mobile Number</label>
+                        <input type="text" style="max-width:100%" class="form-control p-4" id="txtmob" placeholder="Mobile No" required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    @*<div class="row">*@
+
+                    <div class="col-md-6">
+
+                        <label>Choose Gender</label>
+
+                        <div style="border:ridge;padding:5px;border-radius:10px;" class=" form-control">
+                            <label class="radio"><input type="radio" name="radio" checked="" id="rdoMale"><i></i>Male</label>&nbsp;&nbsp;
+                            <label class="radio"><input type="radio" name="radio" id="rdoFemale"><i></i>Female</label>
+                        </div>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Choose Religion</label>
+                        <br />
+                        <select id="ddlReligion" class="form-control">
+                            <option>
+                                Choose Option
+                            </option>
+                            <option>
+                                Hindu
+                            </option>
+                            <option>
+                                Buddist
+                            </option>
+                            <option>
+                                Christian
+                            </option>
+                            <option>
+                                Jewish
+                            </option>
+                            <option>
+                                Jain
+                            </option>
+                            <option>
+                                Muslim
+                            </option>
+                            <option>
+                                Sikh
+                            </option>
+
+                            <option>
+                                Paris
+                            </option>
+                        </select>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    @*</div>*@
+                    <br />
+
+                    <div class="col-sm-6">
+                        <label>Date Of Birth</label>
+                        <input type="date" style="max-width:100%" class="form-control p-4" id="txtdob" required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Upload Photo</label>
+                        <input type="file" style="max-width:100%" class="form-control p-4" id="file1" required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password" style="max-width:100%" class="form-control p-4" id="txtpwd" placeholder="Enter Password" required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password" style="max-width:100%" class="form-control p-4" id="txtcpwd" placeholder="Confirm Password" required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <textarea style="max-width:100%" class="form-control p-4" id="txtadd" required="required" data-validation-required-message="Please enter your name" placeholder="Please enter your Address"></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="d-flex justify-content-evenly">
+                        <input type="submit" value="Submit" class="btn btn-primary py-2 px-5" onclick="SaveReg()" />
+                        @*<button class="btn btn-primary py-2 px-5" type="submit" id="sendMessageButton" onclick="SaveReg()">Submit</button>*@
+                        <button class="btn btn-dark py-2 px-5" type="reset" id="sendMessageButton">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@*<div class="conatiner-fulid py-5">
+        <div class="col-md-12">
+
+        </div>
+    </div>*@
+<!-- Carousel End -->
+
+
+
+
+
+
+<div class="row">
+    <div class="card" style="border-radius:10px;overflow:hidden;">
+        <div class="card-body">
+            <h3 class="text-center fw-200 mb-3 text-dark" style="font-size: 2rem">Find your Special Someone</h3>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row" style="margin-top:20px;" id="ProfileMember">
+
+
+        </div>
+    </div>
+</div>
+
+
+
+@* Cakes photos starts*@
+
+<!--<div class="conatiner-fulid">
+    <div class="jumbotron jumbotron-fluid page-header cakePhotoBanner" style="margin-top:20px; height:100px;">
+        <div class="container text-center">
+            <h3 class="text-center fw-200 mb-3 text-white" style="font-size: 2rem">Your Future Patner Here</h3>
+        </div>
+    </div>
+    <div class="accordion accordion-flush conatiner-fulid" id="accordionFlushExample" style="margin-top:-30px;">
+        <div class="accordion-item">
+            <center>
+                <h1 class="accordion-header">
+                    <button class="accordion-button collapsed d-flex mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <h4 style="color: #000000; margin-left: auto;">See Photos</h4>
+                    </button>
+                </h1>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="background-color: white;">
+                    <div class="container p-md-5">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/g1.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Namrata</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/bo2.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Manish</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/g10.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Bharti</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/boe.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Pankaj</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:20px;">
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/g11.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Punam</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/bo5.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Sahil</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/g3.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Bhumika</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <img src="~/Content/User/img/bo4.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                        <br />
+                                        <br />
+                                        <div class="text-center">
+                                            <h6 style="color:black;" class="text-center">Chetan</h6>
+                                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">More Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </center>
+
+        </div>
+    </div>
+</div>-->
+
+@* Cakes photos Ends*@
+
+
+
+
+@*best sellers starts*@
+
+<div class="conatiner-fulid">
+    <div class="jumbotron jumbotron-fluid page-header girlsPhotoBanner" style="margin-top:20px; height:100px;">
+        <div class="container text-center">
+            <h3 class="text-center fw-200 mb-3 text-white" style="font-size: 2rem">Find Your Bride</h3>
+        </div>
+    </div>
+    <div class="accordion" id="accordionExample" style="margin-top:-30px;">
+        <div class="accordion-item" style="border:none;">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h4 style="color: #000000; margin-left: auto;">Bride's Photo</h4>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="container">
+                        <div class="row" id="GetBride">
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+@*best seller end*@
+
+
+
+<div class="conatiner-fulid">
+    <div class="jumbotron jumbotron-fluid page-header girlsPhotoBanner" style="margin-top:20px; height:100px;">
+        <div class="container text-center">
+            <h3 class="text-center fw-200 mb-3 text-white" style="font-size: 2rem">Find Your Groom</h3>
+        </div>
+    </div>
+    <div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top:-30px;">
+        <div class="accordion-item">
+            <h1 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h4 style="color: #000000; margin-left: auto;">Groom Photo</h4>
+                </button>
+            </h1>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="background-color:white; ">
+                <div class="container p-md-5">
+                    <div class="row" id="GetGroomlst">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*Boys Cakes starts*@
+
+<div class="conatiner-fulid">
+    <div class="jumbotron jumbotron-fluid page-header girlsPhotoBanner" style="margin-top:20px; height:100px;">
+        <div class="container text-center">
+            <h3 class="text-center fw-200 mb-3 text-white" style="font-size: 2rem">Success Story</h3>
+        </div>
+    </div>
+    <div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top:-30px;">
+        <div class="accordion-item">
+            <h1 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    <h4 style="color: #000000; margin-left: auto;">See Photos</h4>
+                </button>
+            </h1>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="container p-md-5">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <img src="~/Content/User/img/Esankalp.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                    <br />
+                                    <br />
+                                    <div class="text-center">
+                                        <h6 style="color:black;" class="text-center">Saurabh And Mona</h6>
+                                        <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='#'">More Details</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <img src="~/Content/User/img/Esankalp1.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                    <br />
+                                    <br />
+                                    <div class="text-center">
+                                        <h6 style="color:black;" class="text-center">Sachin And Harshali</h6>
+                                        <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='#'">More Details</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <img src="~/Content/User/img/Esankalp2.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                    <br />
+                                    <br />
+                                    <div class="text-center">
+                                        <h6 style="color:black;" class="text-center">Manish And Manjusha</h6>
+                                        <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='#'">More Details</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <img src="~/Content/User/img/ss4.jpg" class="img-fluid image-popup" style="height: 150px; width: 100%" />
+                                    <br />
+                                    <br />
+                                    <div class="text-center">
+                                        <h6 style="color:black;" class="text-center">Shital And Akshay</h6>
+                                        <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='#'">More Details</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card" style="border-radius:10px;overflow:hidden;">
+        <div class="card-body">
+            <h3 class="text-center fw-200 mb-3 text-dark" style="font-size: 2rem">...Package's...</h3>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="margin-top:20px;">
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="position-relative text-center" style="margin-top: -100px;">
+                        <h6 class="font-weight-bold text-dark mt-5 mb-3 pt-5">Gold Plus</h6>
+                        <br />
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>50 Express Interests</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>10 Gallery Photo Upload</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>500 Contact Info View</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>Show Auto Profile Match</h6>
+                        <br />
+                        <br />
+                        <br />
+
+                        <h4>4,999.00₹</h4>
+                        <h6 style="color:red">1 Year</h6>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">Purchase This Package</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 sm">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="position-relative text-center" style="margin-top: -100px;">
+                        <h5 class="font-weight-bold text-dark mt-5 mb-3 pt-5">Diamond</h5>
+                        <br />
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>50 Express Interests</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>10 Gallery Photo Upload</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>500 Contact Info View</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>Show Auto Profile Match</h6>
+
+                        <br />
+                        <br />
+                        <br />
+
+                        <h4>5,999.00₹</h4>
+                        <h6 style="color:red">1 Year Service </h6>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">Purchase This Package</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="position-relative text-center" style="margin-top: -100px;">
+                        <h5 class="font-weight-bold text-dark mt-5 mb-3 pt-5">Diamond Plus</h5>
+                        <br />
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>100 Express Interests</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>20 Gallery Photo Upload</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>600 Contact Info View</h6>
+
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>Show Auto Profile Match</h6>
+                        <h6 class="text-uppercase text-muted mb-4 text-left"><span class="green-check">&#10003;</span>Plus One Family Member Free Service For Marriage</h6>
+
+                        <h4>6,999.00₹</h4>
+                        <h6 style="color:red">Till marriage Plan</h6>
+
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-danger btn-buy-now owl-height" onclick="window.location.href='../ProductDetail/ProductDetailIndex'">Purchase This Package</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Boys Cakes end*@
+
+<!-- Modal -->
+<div class="modal fade" id="cake-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="~/Content/User/img/laddo.jpg" class="modal-img" alt="modal img">
+                <div class="modal-footer">
+                    @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+                    <button type="button" class="btn btn-secondary close-button" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

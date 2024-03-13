@@ -1,0 +1,122 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Reg.js"></script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@ViewBag.Title - ShubhKarya</title>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<!--Favicon-->
+<link href="img/favicon.ico" rel="icon">
+
+<!--Google Web Fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<!--Libraries Stylesheet-->
+<link href="~/Content/User/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="~/Content/User/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<!--Customized Bootstrap Stylesheet-->
+<link href="~/Content/User/css/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href=ttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+    @model ShubhKarya.Models.RegModel
+    @using (Html.BeginForm("LoginIn", "Login", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <h2 class="text align-center" style="color:black">Login</h2>
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                    <p class="text-center small">Enter your username & password to login</p>
+                                </div>
+
+                                <form class="row g-3 needs-validation" novalidate>
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true)
+                                    @if (@ViewBag.Message != null)
+                                    {
+                                        <div class="form-group">
+                                            @ViewBag.Message
+                                        </div>
+                                    }
+                                    @using (Html.BeginForm("LoginIn", "Login", FormMethod.Post))
+                                    {
+                                        @Html.LabelFor(a => a.Email)
+                                        @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(a => a.Email)
+                                        <br />
+
+                                        @Html.LabelFor(a => a.Password)
+                                        @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+                                        <br />
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-dark" value="Login">
+                                                Login Now
+                                            </button>
+                                         </div>
+
+                                            @*<input type="submit" value="Login" class="btn btn-primary  py-2 py-lg-2 d-lg-flex" />*@
+
+                                            }
+                                            <br />
+                                            <br />
+                                            <div class="col-12">
+                                                <p class="small mb-0">Don't have account? <a href="~/Home/Index">Create an account</a></p>
+                                            </div>
+                                    </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    }
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/User/lib/easing/easing.min.js"></script>
+    <script src="~/Content/User/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Content/User/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Content/User/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/Content/User/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="~/Content/User/mail/jqBootstrapValidation.min.js"></script>
+    <script src="~/Content/User/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Content/User/js/main.js"></script>
+</body>
+</html>

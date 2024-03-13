@@ -1,0 +1,433 @@
+﻿
+@{
+    ViewBag.Title = "InvoiceIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/autocompletejquery1.js"></script>
+<script src="~/Scripts/jqueryautocompliteui2.js"></script>
+<script src="~/Content/Pages/Invoice.js"></script>
+<script src="~/Content/Pages/Product.js"></script>
+<script src="~/Content/Pages/Customer.js"></script>
+
+<section class="section">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-12 text-end">
+                        <label>Invoice No:</label> <input id="lblInvoiceNo" style="color:red" disabled />
+                        <input type="hidden" id="lblInvoiceId" style="color:red" disabled />
+                    </div>
+                    <form class="row g-3">
+                        <h5 class="card-title">Customer Invoice</h5>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="hidden" id="hdncustomerId" />
+                                <input type="text" class="form-control" id="txtCustomerName" data-toggle="tooltip" title="Search Customer by Name / Mobile" placeholder="Customer Name">
+                                @*<select type="text" class="form-control" id="getcustomername" onchange="Customerdetails()"></select>*@
+                                <label for="floatingEmail">Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtMobile" placeholder="Mobile No">
+                                <label for="floatingName">  Mobile No</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="lblGSTNo" placeholder="GST No">
+                                <label for="floatingEmail">GST No</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2" hidden>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtEmail" placeholder="  Mobile No ">
+                                <label for="floatingName"> Email</label>
+                            </div>
+                        </div>
+
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Address" maxlength="5" id="lblAddress" style="height: 100px;"></textarea>
+                                        <label for="floatingTextarea">Address</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="lblCity" placeholder="City">
+                                                <label for="floatingCity">City</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="lblState" placeholder="State">
+                                                <label for="floatingCity">State</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="lblZipCode" placeholder="Zip Code">
+                                                <label for="floatingCity">Zip Code</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr />
+                    </form>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                @*<input type="hidden" class="form-control" id="txtParticular" placeholder="Name">*@
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-floating">
+                                            <input type="hidden" class="form-control" id="getparticular">
+                                            <input type="text" class="form-control" id="txtParticular" data-toggle="tooltip" title="Search Customer by Name / Mobile" placeholder="Customer Name">
+                                            <label for="floatingEmail">Particular</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtUOM" placeholder="Name">
+                                            <label for="floatingEmail">UOM</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtHSN" placeholder="Name">
+                                            <label for="floatingEmail">HSN</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtGST" placeholder="Name">
+                                            <label for="floatingEmail">GST</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtMRP" placeholder="Name">
+                                            <label for="floatingEmail">MRP</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtRate" placeholder="Name">
+                                            <label for="floatingEmail">Rate</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtQty" placeholder="Name">
+                                            <label for="floatingEmail">Qty</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtAmount" placeholder="Name">
+                                            <label for="floatingEmail">Amount</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtDiscount" value="0" placeholder="Name">
+                                            <label for="floatingEmail">Discount</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtCGST" placeholder="Name">
+                                            <label for="floatingEmail">CGST</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtSGST" placeholder="Name">
+                                            <label for="floatingEmail">SGST</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtCESS" placeholder="Name">
+                                            <label for="floatingEmail">CESS</label>
+                                        </div>
+                                        <input type="hidden" class="form-control" id="txascamt" placeholder="Name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txttotalamt" placeholder="Name">
+                                            <label for="floatingEmail">Total</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 text-end">
+                                        <div class="form-floating" style="padding-right: 30px; padding-top: 16px;">
+                                            <button type="submit" class="btn btn-primary" onclick="SaveCustomerOrder()">Add</button>
+                                            <button type="reset" class="btn btn-secondary" onclick="OrderReset()">Reset</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="table-responsive">
+                                    <input type="hidden" id="lblInvoiceNo" />
+                                    <table id="tblorder" class="table table-bordered table-hover" style="width:100%">
+                                        <thead class="text-white bg-dark">
+                                            <tr align="center">
+                                                <td class="text-white bg-dark">Part</td>
+                                                <td class="text-white bg-dark"> HSN </td>
+                                                <td class="text-white bg-dark"> UAN </td>
+                                                <td class="text-white bg-dark">GST</td>
+                                                <td class="text-white bg-dark">Rs</td>
+                                                <td class="text-white bg-dark">ret</td>
+                                                <td class="text-white bg-dark">Amt</td>
+                                                <td class="text-white bg-dark">Dis</td>
+                                                <td class="text-white bg-dark">Qty</td>
+                                                <td class="text-white bg-dark">CGST</td>
+                                                <td class="text-white bg-dark">SGST</td>
+                                                <td class="text-white bg-dark">Ces</td>
+                                                <td class="text-white bg-dark">TAmt</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody> </tbody>
+                                    </table>
+                                </div>
+                                <div class="row card-footer">
+                                    <div class="col-sm-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTotalQuantity" placeholder="Qty">
+                                            <label for="floatingEmail">Qty</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTaxableAmount" placeholder="TAXABLE AMOUNT">
+                                            <label for="floatingEmail">TAXABLE Amt</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTotalDiscount" placeholder="Name">
+                                            <label for="floatingEmail">DISCOUNT</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTotalCGST" placeholder="Name">
+                                            <label for="floatingEmail">	CGST Amt</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTotalSGST" placeholder="Name">
+                                            <label for="floatingEmail">	SGST Amt</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTotalCESS" placeholder="Name">
+                                            <label for="floatingEmail">	CESS Amt</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtOtherCharcge" placeholder="Name">
+                                            <label for="floatingEmail">	OTHER CHARGES</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lblTotalAmount" placeholder="Name">
+                                            <label for="floatingEmail">	TOTAL AMOUNT</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4  text-end">
+                                        <div class="form-floating" style="padding-right: 30px; padding-top: 16px;">
+                                            <input type="hidden" id="hdnamoutvalue" value="0" />
+                                            <button type="submit" class="btn btn-success" onclick="printCustomerInvoice()">Print</button>
+                                            <button type="submit" class="btn btn-primary" onclick="SaveCustomerInvoice()">Submit</button>
+                                            <button type="reset" class="btn btn-secondary" onclick="   InvoiceResetReset();">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @*<hr />*@
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<div id="productform" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title">Add Product</h5>
+                <form class="row g-3">
+                    <input type="hidden" class="form-control" id="hdnId">
+                    <input type="hidden" class="form-control" id="hdnMasterId">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtParticular" placeholder=" Product Name">
+                            <label for="floatingEmail"> Particular</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtHSN" placeholder="Enter 15 digit HSN">
+                            <label for="floatingEmail">HSN</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtUOM" placeholder="UOM">
+                            <label for="floatingEmail">UOM</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtGST" placeholder="GST" />
+                            <label for="floatingName">GST</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtMRP" placeholder="MRP">
+                            <label for="floatingEmail">MRP</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtRate" placeholder=" Rate">
+                            <label for="floatingEmail">Rate</label>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="SaveProduct()">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="customerpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title">Add Customer</h5>
+                <!-- Floating Labels Form -->
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <input type="hidden" class="form-control" id="hdnId">
+                        <input type="hidden" class="form-control" id="hdnMasterId">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtCustomerName" placeholder="Name">
+                            <label for="floatingEmail">Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtMobile" placeholder="Mobile No">
+                            <label for="floatingName">  Mobile No</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtEmail" placeholder="  Mobile No ">
+                            <label for="floatingName"> Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtGSTNo" placeholder="GST No">
+                            <label for="floatingEmail">GST No</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Address" id="txtAddress" style="height: 100px;"></textarea>
+                                    <label for="floatingTextarea">Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtCity" placeholder="City">
+                                            <label for="floatingCity">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtState" placeholder="State">
+                                            <label for="floatingCity">State</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtZipCode" placeholder="Zip Code">
+                                            <label for="floatingCity">Zip Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="SaveCustomer()">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form><!-- End floating Labels Form -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var Custform = function () {
+        $("#customerpopup").modal('show');
+    }
+    document.addEventListener('keydown', function (event) {
+        // Check if Ctrl (Cmd on Mac) + P is pressed
+        if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
+            event.preventDefault(); // Prevent default browser behavior (printing)
+            Custform(); // Open the popup
+        }
+    });
+</script>
+

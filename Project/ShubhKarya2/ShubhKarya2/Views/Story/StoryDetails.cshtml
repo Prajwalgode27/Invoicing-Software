@@ -1,0 +1,299 @@
+﻿
+@{
+    ViewBag.Title = "StoryDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    @@media (max-width: 767px) {
+        .col-sm-3 {
+            - width: 50%;
+        }
+
+        .ProductImage {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 15px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            padding: 7px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .MainContainer {
+            margin-top: 110px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+
+
+        .ProductImage {
+            width: 150px;
+            height: 150px;
+            border: 15px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 20px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            margin-top: 24px;
+        }
+
+        .MainContainer {
+            margin-top: 200px;
+        }
+    }
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .Font {
+        font-family: 'Brush Script MT', cursive;
+    }
+
+    .fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+
+</style>
+
+
+<div class="container pt-4">
+    <div class="card shadow-lg mb-5 bg-body-tertiary" style="border-radius:20px;">
+        <div class="card-body">
+            <h2 class="position-relative text-center" style="color:#9c0000">Details </h2>
+        </div>
+    </div>
+</div>
+
+<h1 class="section-title position-relative text-center mb-5">Happy Married Life</h1>
+
+<div class="container">
+    <div class="row" style="margin-top:20px;">
+
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <center> <img src="~/Content/User/story/s15.jpg" class="img-fluid image-popup" style="height: 620px;  width: 420px;" /></center>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-4 card mb-4">
+
+            <div class="">
+                <dl class="row card-body">
+                    <dt class="col-sm-7 ProductName ">Name</dt>
+                    <dd class="col-sm-5">Praveen Pannase</dd>
+
+                    <dt class="col-sm-7 ProductName ">Gender</dt>
+                    <dd class="col-sm-5">Male</dd>
+
+
+                    <dt class="col-sm-7 ProductName">Address</dt>
+                    <dd class="col-sm-5">
+                        At.Post Walni Ta+Dist Nagpur
+                    </dd>
+
+                    <dt class="col-sm-7 ProductName">Mobile No.</dt>
+                    <dd class="col-sm-5">8411092001</dd>
+
+                    <dt class="col-sm-7 ProductName">Email</dt>
+                    <dd class="col-sm-5">Pravin.Pannase7@gmail.com</dd>
+
+                    <dt class="col-sm-7 ProductName">Religion</dt>
+                    <dd class="col-sm-5">Hindu</dd>
+
+                    <dt class="col-sm-7 ProductName">Cast</dt>
+                    <dd class="col-sm-5">Kunbi</dd>
+
+                    <dt class="col-sm-7 ProductName">SubCast</dt>
+                    <dd class="col-sm-5">Tirle</dd>
+
+                    <dt class="col-sm-7 ProductName">Goutra</dt>
+                    <dd class="col-sm-5">Kashyap</dd>
+
+                    <dt class="col-sm-7 ProductName">Education</dt>
+                    <dd class="col-sm-5">M.B.A.(Marketing)</dd>
+
+                    <dt class="col-sm-7 ProductName">Income</dt>
+                    <dd class="col-sm-5">15 LPA</dd>
+
+                    <dt class="col-sm-7 ProductName">BloodGroup</dt>
+                    <dd class="col-sm-5">B+</dd>
+
+                    <dt class="col-sm-7 ProductName">Skin Complex</dt>
+                    <dd class="col-sm-5">Fair</dd>
+
+                    <dt class="col-sm-7 ProductName">Goutra</dt>
+                    <dd class="col-sm-5">Kashyap</dd>
+                </dl>
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-4 card mb-4">
+
+            <div class="">
+                <dl class="row card-body">
+                    <dt class="col-sm-7 ProductName ">Name</dt>
+                    <dd class="col-sm-5">Praveen Pannase</dd>
+
+                    <dt class="col-sm-7 ProductName ">Gender</dt>
+                    <dd class="col-sm-5">Male</dd>
+
+
+                    <dt class="col-sm-7 ProductName">Address</dt>
+                    <dd class="col-sm-5">
+                        At.Post Walni Ta+Dist Nagpur
+                    </dd>
+
+                    <dt class="col-sm-7 ProductName">Mobile No.</dt>
+                    <dd class="col-sm-5">8411092001</dd>
+
+                    <dt class="col-sm-7 ProductName">Email</dt>
+                    <dd class="col-sm-5">Pravin.Pannase7@gmail.com</dd>
+
+                    <dt class="col-sm-7 ProductName">Religion</dt>
+                    <dd class="col-sm-5">Hindu</dd>
+
+                    <dt class="col-sm-7 ProductName">Cast</dt>
+                    <dd class="col-sm-5">Kunbi</dd>
+
+                    <dt class="col-sm-7 ProductName">SubCast</dt>
+                    <dd class="col-sm-5">Tirle</dd>
+
+                    <dt class="col-sm-7 ProductName">Goutra</dt>
+                    <dd class="col-sm-5">Kashyap</dd>
+
+                    <dt class="col-sm-7 ProductName">Education</dt>
+                    <dd class="col-sm-5">M.B.A.(Marketing)</dd>
+
+                    <dt class="col-sm-7 ProductName">Income</dt>
+                    <dd class="col-sm-5">15 LPA</dd>
+
+                    <dt class="col-sm-7 ProductName">BloodGroup</dt>
+                    <dd class="col-sm-5">B+</dd>
+
+                    <dt class="col-sm-7 ProductName">Skin Complex</dt>
+                    <dd class="col-sm-5">Fair</dd>
+
+                    <dt class="col-sm-7 ProductName">Goutra</dt>
+                    <dd class="col-sm-5">Kashyap</dd>
+                </dl>
+            </div>
+
+
+        </div>
+
+
+        <div class="p-3" style="max-width: 900px;">
+            <button type="button" class="btn btn-primary py-3 px-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Comment
+            </button>
+
+
+
+
+
+
+            @*< !--Modal -->*@
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title " style="color: #9c0000; font:100;" id="exampleModalLabel">Comment Now</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="card-body row">
+
+
+                                <div class="col-sm-12">
+                                    <textarea style="max-width:100%" class="form-control p-4" id="txtComment" required="required" data-validation-required-message="Please enter your Comment" placeholder="Please enter your Comment"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="d-flex justify-content-evenly">
+                                    <button class="btn btn-primary py-2 px-5" type="submit" id="sendMessageButton">Submit</button>
+
+                                    <button class="btn btn-primary py-2 px-5" type="reset" id="sendMessageButton">Reset</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            &nbsp;     &nbsp;    &nbsp;
+
+            <i onclick="myFunction(this)" class="fa fa-thumbs-up btn btn-primary py-1 px-5 "></i>
+
+            <script>
+                function myFunction(x) {
+                    x.classList.toggle("fa-thumbs-down");
+                }
+            </script>
+        </div>
+
+
+
+
+   
+    </div >
+
+</div >
+
+
+
+
+
+
+

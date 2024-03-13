@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "ProductIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Product.js"></script>
+
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+</style>
+
+@*<div class="col-sm-12 text-end">
+    <button class="btn btn-success small" onclick="AddProduct()"><i class="bi bi-grid-fill"></i> &nbsp;Add Product</button>
+
+</div>*@
+
+<section class="section">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add Product</h5>
+                    <form class="row g-3">
+                        <input type="hidden" class="form-control" id="hdnId">
+                        <input type="hidden" class="form-control" id="hdnMasterId">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtParticular" placeholder=" Product Name">
+                                <label for="floatingEmail"> Particular</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtHSN" placeholder="Enter 15 digit HSN">
+                                <label for="floatingEmail">HSN</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtUOM" placeholder="UOM">
+                                <label for="floatingEmail">UOM</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtGST" placeholder="GST" />
+                                <label for="floatingName">GST</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtMRP" placeholder="MRP">
+                                <label for="floatingEmail">MRP</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtRate" placeholder=" Rate">
+                                <label for="floatingEmail">Rate</label>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onclick="SaveProduct()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Product List</h5>
+                        <div class="table-responsive">
+                            <table id="tblProduct" class="table table-bordered table-hover" style="width:100%">
+                                <thead class="text-white bg-dark">
+                                    <tr align="center">
+                                        <td class="text-white bg-dark">Product</td>
+                                        <td class="text-white bg-dark"> HSN </td>
+                                        <td class="text-white bg-dark"> UAN </td>
+                                        <td class="text-white bg-dark">GST</td>
+                                        <td class="text-white bg-dark"> MRP </td>
+                                        <td class="text-white bg-dark"> Rate </td>
+                                        <td class="text-white bg-dark"></td>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+    <script>
+        var js = jQuery.noConflict(true);
+        js(document).ready(function () {
+            js("#tblProduct").DataTable();
+
+        });
+    </script>
+

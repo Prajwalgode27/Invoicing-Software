@@ -1,0 +1,317 @@
+﻿
+@{
+    ViewBag.Title = "MemberIndex";
+    Layout = "~/Views/Shared/_Layout -Admin.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Page/Member.js"></script>
+<style>
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr {
+        background-color: black;
+        color: white;
+    }
+</style>
+<section class="section">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Member Registration</h3>
+            <form class="row g-3 ">
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtname" placeholder="Your Name">
+                        <label for="floatingName"> Name</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="file" class="form-control" id="file1" placeholder="Your Name">
+                        <label for="floatingName">Photo</label>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+
+                    <label>Gender</label>
+                    <br />
+                    <label class="radio"><input type="radio" name="radio" ichecked="" id="rdMale"><i></i>Male</label>&nbsp;&nbsp;
+                    <label class="radio"><input type="radio" name="radio" id="rdFemale"><i></i>Female</label>
+
+                </div>
+                <div class="col-md-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtheight" placeholder="Your Height">
+                        <label for="floatingName"> Height</label>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="txtdob">
+                        <label for="floatingStartDate">Date of Birth</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtpob" placeholder="City">
+                            <label for="floatingCity">Place of Birth</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+
+                            <select id="ddlrashi" name="Rashi" data-name="Rashi" class=" form-control" fdprocessedid="rb3g9e">
+                                <option value>Select your Rashi</option>slot
+                                <option value="Aries (Mesh)">Aries (Mesh)</option>slot
+                                <option value="Taurus (Vrushabh)">Taurus (Vrushabh)</option>slot
+                                <option value="Gemini (Mithun)">Gemini (Mithun)</option>slot
+                                <option value="Cancer (Kark)">Cancer (Kark)</option>slot
+                                <option value="Leo (Sinh)">Leo (Sinh)</option>slot
+                                <option value="Virgo (Kanya)">Virgo (Kanya)</option>slot
+                                <option value="Scorpio (Vrushak)">Scorpio (Vrushak)</option>slot
+                                <option value="Sagittarius (Dhanu)">Sagittarius (Dhanu)</option>slot
+                                <option value="Capricorn (Makar)">Capricorn (Makar)</option>slot
+                                <option value="Aquarius (Kumbh)">Aquarius (Kumbh)</option>slot
+                                <option value="Pisces (Meen)">Pisces (Meen)</option>slot
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <div class="form-floating">
+
+                            <select id="ddlnakshatra" name="Nakshatra" data-name="Rashi" class=" form-control" fdprocessedid="rb3g9e">
+                                <option value>Select your nakshatra</option>slot
+                                <option value="Ashvini/Aswini">Ashvini/Aswini</option>slot
+                                <option value="Bharani">Bharani</option>slot
+                                <option value="Krittika/Krithika">Krittika/Krithika</option>slot
+                                <option value="Rohini">Rohini</option>slot
+                                <option value="Mrigashirsha">Mrigashirsha</option>
+                                <option value="Ardra">Ardra</option>
+                                <option value="Magha">Magha</option>
+                                <option value="Purva Phalguni">Purva Phalguni</option>
+                                <option value="Uttara Phalguni">Uttara Phalguni</option>
+                                <option value="Hasta">Hasta</option>
+                                <option value="Chitra">Chitra</option>
+                                <option value="Swati">Swati</option>slot
+                                <option value="Vishakha">Vishakha</option>slot
+                                <option value="Anuradha">Anuradha</option>slot
+                                <option value="Hasta">Hasta</option>
+                                <option value="Jyestha">Jyestha</option>
+                                <option value="Moola">Moola</option>slot
+                                <option value="Purvashada">Purvashada</option>slot
+                                <option value="Uttarashada">Uttarashada</option>slot
+                                <option value="Sharavan">Sharavan</option>slot
+                                <option value="Dhanishta">Dhanishta</option>slot
+                                <option value="Shatabisha">Shatabisha</option>slot
+                                <option value="Purvabhadra">Purvabhadra</option>slot
+                                <option value="Uttarabhadra">Uttarabhadra</option>slot
+                                <option value="Revati">Revati</option>slot
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtcaste" placeholder="Caste">
+                                <label for="floatingCaste">Caste</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtsubcaste" placeholder="Sub Caste">
+                                <label for="floatingSubCaste">Sub Caste</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtgotra" placeholder="Gotra">
+                                <label for="floatingGotra">Gotra</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <select id="ddlmanglik" name="Manglik" data-name="Manglik" class=" form-control" fdprocessedid="rb3g9e">
+                                    <option value>Are you manglik</option>slot
+                                    <option value="Yes">Yes</option>slot
+                                    <option value="No">No</option>slot
+                                    <option value="Partial(Anshik)">Partial(Anshik)</option>slot
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtmobile" placeholder="Your Contact number">
+                        <label for="floatingFathername">Contact number</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingFathername" placeholder="Your Alternate number">
+                        <label for="floatingFathername">Alternate number</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="txtmail" placeholder="Enter Gmail">
+                        <label for="floatingFathername">Gmail</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="txtPass" placeholder="Create Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtmothertongue" placeholder="Mother Tongue">
+                                <label for="floatingMotherTongue">Mother Tongue</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txteducation" placeholder="Education">
+                                <label for="floatingEducation">Education</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtcollagename" placeholder="Collage Name">
+                                <label for="floatingCollageName">Collage Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtorganization" placeholder="Organization Name">
+                                <label for="floatingOrganizationName">Organization Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtprofession" placeholder="Designation">
+                                <label for="floatingDesignation">Designation</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtincome" placeholder="Annual Income">
+                                <label for="floatingAnnualIncome">Annual Income</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Address" id="txtaddress"></textarea>
+                        <label for="floatingTextarea">Address</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtcity" placeholder="City">
+                        <label for="floatingCity">City</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtstate" placeholder="State">
+                        <label for="floatingCity">State</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtPinCode" placeholder="Zip Code">
+                        <label for="floatingCity">Zip Code</label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" onclick="saveMember()">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form>
+        </div>
+   
+    </div>
+
+</section>
+
+
+
+<div id="MemberModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body" id="DetailMember">
+
+                </div>
+                <div class="modal-footer" style="margin-right:100px">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

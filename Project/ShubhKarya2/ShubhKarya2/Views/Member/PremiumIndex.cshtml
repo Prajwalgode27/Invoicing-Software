@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "PremiumIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Reg.js"></script>
+<script src="~/Content/Page/Package.js"></script>
+<script src="~/Content/Page/Member.js"></script>
+<input type="hidden" value="@ViewBag.Id" id="hdnId" />
+
+
+<style>
+
+    @@media (max-width: 767px) {
+        .col-sm-3 {
+         
+        }
+
+        .ProductImage {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 15px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            padding: 7px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .MainContainer {
+            margin-top: 110px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+
+
+        .ProductImage {
+            width: 150px;
+            height: 150px;
+            border: 15px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 20px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            margin-top: 24px;
+        }
+
+        .MainContainer {
+            margin-top: 200px;
+        }
+    }
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+
+
+
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 100px;">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3 mt-lg-5"> Member Here</h1>
+    </div>
+
+</div>
+<!-- Header End -->
+
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <h1 class="section-title position-relative text-center mb-5"> Groom & Bride Search Here</h1>
+
+    </div>
+</div>
+
+
+
+<div class="container" >
+    <div class="row" style="margin-top:20px;"id="MemberList">
+
+
+    </div>
+</div>

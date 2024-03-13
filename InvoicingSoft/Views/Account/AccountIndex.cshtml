@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "AccountIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/CustomerAccount.js"></script>
+<script src="~/Content/Pages/Customer.js"></script>
+<input type="hidden" id="custid"value="@ViewBag.customerId" />
+<div class="row">
+    <div class="row my-2 mt-1" id="Dontprint">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6  text-end">
+                    <a type="button" href="/Customer/CustomerIndex" class="btn btn-danger">Back</a>
+                    <button onclick="AddUser()" class="btn btn-success"><i class="bi bi-whatsapp"></i>Whatsapp</button>
+                    <button onclick="AddUser()" class="btn btn-info"><i class="bi bi-file-pdf-fill">PDF</i></button>
+                    <button onclick="printDiv(print)" class="btn btn-primary print"><i class="bi bi-printer"></i>Print</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-sm-6" id="Dontprint">
+        <section>
+            <div>
+                <div class="card p-3">
+
+                    <form class="row g-3">
+                        <input type="hidden" id="hdnCustomerId" value="@ViewBag.customerId" />
+                        <div class="col-md-4">
+                            <label for="inputTotalAmount" class="form-label">Preveus Balance</label>
+                            <input type="text" class="form-control" id="txtPreveusBalance" placeholder="Preveus Balance">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputPaidAmount" class="form-label">Paid Amount</label>
+                            <input type="text" class="form-control" id="txtPaidBalance" placeholder="Paid Amounts">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="inputBalanceAmount" class="form-label">Balance Amount</label>
+                            <input type="text" class="form-control" id="txtttBalanceAmount" placeholder=" Balance Amount" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputPaymentmode" class="form-label">Payment mode</label>
+                            <select id="txtPaymentMode" class="form-control">
+                                <option>Cash</option>
+                                <option>UPI</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputTransactionNo" class="form-label">Transaction No</label>
+                            <input type="text" class="form-control" id="txtTransactionNo" placeholder="Please Enter Transaction No">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onClick="SaveCustomerAccount()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+
+                        <!-- End Multi Columns Form -->
+
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-sm-6">
+        <section>
+            <div>
+                <div class="card p-3">
+                    @*<div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <td class="text-white bg-dark">Transaction Date</td>
+                                    <td class="text-white bg-dark">Paid Amount </td>
+                                </div>
+                                <div class="col-sm-6">
+                                    <td class="text-white bg-dark">Transaction Date</td>
+                                    <td class="text-white bg-dark">Paid Amount </td>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="table-responsive">
+                        <div class="d-flex">
+                            <div style="max-height:50px; max-width:50px; overflow:hidden;">
+                                @*<img src="~/Content/images/BhavnasLogo.jpg" class="img-responsive img-fluid" />*@
+
+                            </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div>
+                                <span class="d-flex" style="font-size:12px;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Receipt No:<span id="lblSubscriptionId"></span></b>*@
+
+                                </span>
+                                @*<h4 class="d-flex">Bhavna's</h4>*@
+                                <center>
+                                    <h5>ALABHYA TRADERS</h5>
+                                </center>
+
+                                <p style="font-size:12px; margin-bottom:auto;">
+                                    <b>Address:&nbsp;</b> Plot no 17  near vyankatesh patsanstha,durga nagar,hingna road,nagpur.440016
+                                </p>
+                                <p style="font-size: 10px;"><b>Mobile:&nbsp;</b>8208724560&nbsp;<b>GST No:&nbsp;27AWIPK1888J1ZZ FSSAI No. : 11521056000407</b></p>
+
+
+                            </div>
+                        </div>
+                        <hr style="margin:0rem 0;" />
+                        <div class="d-flex" style="margin-bottom:3px;">
+                            <div style="font-size:12px;" class="span1  col-sm-5">
+                                <b>Name:&nbsp;</b><span id="lblcustomername"></span><br />
+                                <b>Mobile:&nbsp;</b><span id="lblmobile"></span><br />
+                                <b>Address:&nbsp;</b><span id="lbladdress"></span><br />
+                            </div>
+                            <div class="col-sm-2">
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </div>
+
+
+                            <div style="font-size: 12px;" class=" col-sm-5">
+                                <b>GST NO:&nbsp;</b><span id="lblgstno"></span><br />
+                                <b>Email Id:&nbsp;</b><span id="lblemail"></span><br />
+                                <b>Date:&nbsp;</b><span id="currentdate">@DateTime.Now.ToShortDateString()</span><br />
+                            </div>
+                        </div>
+
+                        <table id="tblAccount" class="table table-bordered table-hover" style="margin-bottom:-1px;">
+                            <thead class="text-white bg-dark">
+                                <tr>
+                                    <td class="text-white bg-dark">Transaction Date</td>
+                                    <td class="text-white bg-dark">Balance Amount</td>
+                                    <td class="text-white bg-dark">Paid Amount </td>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody></tbody>
+
+                        </table>
+                        <span class="d-block text-end">
+                            <br />
+                            <br />
+                            <br />
+                            <b>Signature&nbsp;</b>
+                        </span>
+                    </div>
+                    <span class="copyright text-center" style="font-size:10px;">Copyright &copy; 2023 Design By <a href="http://orgsoft.in/">Org Soft</a></span>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+</div>

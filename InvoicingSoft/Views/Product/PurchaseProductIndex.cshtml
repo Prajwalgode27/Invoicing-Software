@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewBag.Title = "PurchaseProductIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .selected {
+        background-color: lightblue;
+    }
+</style>
+<script src="~/Scripts/autocompletejquery1.js"></script>
+<script src="~/Scripts/jqueryautocompliteui2.js"></script>
+
+
+@*<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js"></script>*@
+<link rel="Stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css" />
+<script src="~/Content/Pages/Invoice.js"></script>
+<script src="~/Content/Pages/Product.js"></script>
+<script src="~/Content/Pages/Stock.js"></script>
+
+<section class="section">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Purchase Product</h5>
+                    <div class="col-sm-12 text-end" style=" margin-bottom: 18px; margin-top: -44px;">
+                        <label>Invoice No:</label> <input id="lblPurchesInvoiceNo" style="color:red" disabled />
+                        <input type="hidden" id="lblPurchesInvoiceNo" style="color:red" disabled />
+                    </div>
+                    <!-- No Labels Form -->
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="txtPParticular" placeholder=" Particular">
+                            <input type="hidden" class="form-control" id="hdnpId" placeholder=" Particular">
+                        </div>
+                        <div class="col-md-6">
+                            <img id="imageDisplay" src="#" alt="Selected Image" style="max-width: 300px; max-height: 300px;">
+                            <input type="file" class="form-control" id="File1" placeholder=" Particularimage">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Manufacturing Date</label>
+                            <input type="date" class="form-control" id="txtPManufacturingDate" placeholder="Manufacturing Date">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Expiry Date</label>
+                            <input type="date" class="form-control" id="txtPExpiryDate" placeholder="Expiry Date">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPUOM" placeholder="UOM">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPHSN" placeholder="HSN">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPGST" placeholder="GST">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPMRP" placeholder="MRP">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPPurchesRate" placeholder="Purchase Rate">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPSellingRate" placeholder="Selling Rate">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPQty" placeholder="Net Quantity">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPAmount" placeholder="Amount">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtPDiscount" placeholder="Discount">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="txtPCGST" placeholder="CGST">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="txtPSGST" placeholder="SGST">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="txtPCess" placeholder="Cess">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="txtPtotal" placeholder="Total">
+                        </div>
+
+                        @*<div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Sale Quantity">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Balance Quantity">
+                            </div>*@
+
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success" onclick="SaveProductOrder()">Purchase Product</button>
+                            <button type="reset" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </form><!-- End No Labels Form -->
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblTotalPurchesQuantity" placeholder="Qty">
+                                    <label for="floatingEmail">Qty</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblProductTaxableAmount" placeholder="TAXABLE AMOUNT">
+                                    <label for="floatingEmail">TAXABLE Amt</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblTotalProductDiscount" placeholder="Name">
+                                    <label for="floatingEmail">DISCOUNT</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblTotalTotalPurchesCGST" placeholder="Name">
+                                    <label for="floatingEmail">	CGST Amt</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblTotalPurchesSGST" placeholder="Name">
+                                    <label for="floatingEmail">	SGST Amt</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblTotalPurchrsCESS" placeholder="Name">
+                                    <label for="floatingEmail">	CESS Amt</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="txtPurchesOtherCharcge" placeholder="Name">
+                                    <label for="floatingEmail">	OTHER CHARGES</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lblPurchesTotalAmount" placeholder="Name">
+                                    <input type="hidden" id="hdnPurchesTotalAmount">
+                                    <label for="floatingEmail">	TOTAL AMOUNT</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4  text-end">
+                                <div class="form-floating" style="padding-right: 30px; padding-top: 16px;">
+                                    <input type="hidden" id="hdnamoutvalue" value="0" />
+                                    <button type="submit" class="btn btn-primary" onclick="SavePurchesDetails()">Submit</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+            <div class="card" style="height:42rem;">
+                <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                            <h6>Filter</h6>
+                        </li>
+
+                        <li><a class="dropdown-item" onclick="selectAllItems()">Select All</a></li>
+                        <li><a class="dropdown-item" onclick="deleteSelected()">Delete</a></li>
+                        <li><a class="dropdown-item" onclick="UpdateProductOrder();">Edit</a></li>
+                    </ul>
+                </div>
+
+                <div class="card-body pb-0  pre-scrollable" id="Renewal">
+                    <h5 class="card-title">Purches &amp; Product <span>| Today</span></h5>
+
+                    <div class="news" id="purchesorder">
+
+
+                    </div>
+                    <!-- End sidebar recent posts-->
+
+                </div>
+            </div><!-- End News & Updates -->
+
+        </div><!-- End Right side columns -->
+        <!--<div class="col-lg-4">
+            <!-- News & Updates Traffic -->
+        <!--<div class="card">
+            <div class="filter" style="height:33rem;">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                </ul>
+            </div>
+
+            <div class="card-body pb-0 pre-scrollable" id="Renewal">
+                <h5 class="card-title">Purches &amp; Product <span>| Today</span></h5>
+
+                <div class="news" id="purchesorder">-->
+        <!--<div class="post-item clearfix">
+        <img src="~/Content/assets/img/news-1.jpg" alt="">
+        <h4><a href="#">Parle 100 gm MRP Rs 5.00 Rs</a></h4>
+        <p>Expire Date:20-10-2024 Manufacturing Date:20-10-2024 Rate 4.10 Rs GST 28 %</p>-->
+        -->
+        <!--@*<p><span class="badge bg-success" onclick="GetMemberDetails()">DETAILS</span>&nbsp;<span class="badge bg-primary" onclick="EditMember()">UPDATE</span>&nbsp;<span class="badge bg-danger" onclick="EditMember()">Delete</span></p>*@-->
+        <!--</div>-->
+        <!--</div>--><!-- End sidebar recent posts-->
+        <!--</div>
+        </div>-->
+        <!-- End News & Updates -->
+        <!--</div>--><!-- End Right side columns -->
+    </div>
+
+</section>
+
+@*<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+    <script>
+        var js = jQuery.noConflict(true);
+        js(document).ready(function () {
+            js("#tbltttProduct").DataTable();
+
+        });
+    </script>*@

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoicingSoft", "InvoicingSoft\InvoicingSoft.csproj", "{4D66DC20-C8A7-4378-87D0-6A7B484BA901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoicingSoft.Data", "InvoicingSoft.Data\InvoicingSoft.Data.csproj", "{A6728327-C77E-4DCA-9B24-7BF793E79FB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D66DC20-C8A7-4378-87D0-6A7B484BA901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D66DC20-C8A7-4378-87D0-6A7B484BA901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D66DC20-C8A7-4378-87D0-6A7B484BA901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D66DC20-C8A7-4378-87D0-6A7B484BA901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6728327-C77E-4DCA-9B24-7BF793E79FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6728327-C77E-4DCA-9B24-7BF793E79FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6728327-C77E-4DCA-9B24-7BF793E79FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6728327-C77E-4DCA-9B24-7BF793E79FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CFA3809-06EF-4264-954B-18D08D217D97}
+	EndGlobalSection
+EndGlobal

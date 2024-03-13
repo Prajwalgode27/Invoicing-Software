@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "CustomerInvoiceListIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Invoice.js"></script>
+<input type="hidden" id="txtCustomerId" value="@ViewBag.CustomerId" />
+<section>
+    <div>
+        <div class="card p-4">
+            <div class="table-responsive">
+                <table id="CustomerInvoiceList" class="table table-bordered table-hover" style="width:100%">
+                    <thead class="text-white bg-dark">
+                        <tr>
+                            <td class="text-white bg-dark">Invoice No</td>
+                            <td class="text-white bg-dark">Customer Name</td>
+                            <td class="text-white bg-dark">Invoice Date</td>
+                            <td class="text-white bg-dark">Total Amount</td>
+                            <td class="text-white bg-dark"></td>
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#CustomerInvoiceList').DataTable({
+            "searching": true,
+            //   "scrollY": 355,
+            "scrollX": 355,
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "responsive": true,
+            "fixedHeader": true,
+            });
+
+    });
+</script>

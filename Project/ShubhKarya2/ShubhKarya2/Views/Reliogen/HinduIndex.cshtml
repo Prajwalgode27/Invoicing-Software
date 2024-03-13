@@ -1,0 +1,430 @@
+﻿
+@{
+    ViewBag.Title = "HinduIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+
+    @@media (max-width: 767px) {
+        .col-sm-3 {
+            - width: 50%;
+        }
+
+        .ProductImage {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 15px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            padding: 7px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .MainContainer {
+            margin-top: 110px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+
+
+        .ProductImage {
+            width: 150px;
+            height: 150px;
+            border: 15px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+
+            font-size: 20px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 20px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            margin-top: 24px;
+        }
+
+        .MainContainer {
+            margin-top: 200px;
+        }
+    }
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+
+
+
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 100px;">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3 mt-lg-5">Hindus Here</h1>
+    </div>
+
+</div>
+<!-- Header End -->
+
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <h1 class="section-title position-relative text-center mb-5">Hindus Groom & Bride Search Here</h1>
+  
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row" style="margin-top:20px;">
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb222.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px; " />
+                </div>
+                <div class="text-center">
+                    <div style="font-size-adjust"> Mohan  </div>
+
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-outline-danger btn-buy-now">More Details</a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <img src="~/Content/User/Religion/hb333.jpg" class="img-fluid image-popup" id="imgKaju" style="height: 300px; width: 320px;" />
+
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-outline-danger btn-buy-now">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb3.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+               
+                </div> 
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-outline-danger btn-buy-now">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg1.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>  <div class="text-center">
+    <div class="ProductName">Mohan  </div>
+    <a href="~/Reliogen/HinduDetails" class="btn btn-outline-danger btn-buy-now">More Details</a>
+
+</div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg2.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-outline-danger btn-buy-now">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg3.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>  <div class="text-center">
+  
+                <div class="ProductName">Mohan  </div>
+    <a href="~/Reliogen/HinduDetails" class="btn btn-outline-danger btn-buy-now">More Details</a>
+
+</div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb4.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb5.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg1.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg4.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg5.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg6.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb7.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb8.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb9.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg7.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg8.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg9.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb10.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg10.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb13.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <div class="text-center">
+                        <div class="ProductName">Mohan  </div>
+                        <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hb3.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="card-body">
+                        <img src="~/Content/User/Religion/hb13.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                    </div>
+                    <div class="text-center">
+                        <div class="ProductName">Mohan  </div>
+                        <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <img src="~/Content/User/Religion/hg7.jpg" class="img-fluid image-popup" style="height: 300px; width: 320px;" />
+                </div>
+                <div class="text-center">
+                    <div class="ProductName">Mohan  </div>
+                    <a href="~/Reliogen/HinduDetails" class="btn btn-primary py-md-3 px-md-5 mt-2">More Details</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89365a64ec8e4ff7b9d7f200ba581933" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblCustomer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblCustomerAccount" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblInvoice" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblLoginHistory" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblMaster" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblProduct" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblCustomerOrder" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblStock" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblStockInvoice" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="InvoicingSoftModel.tblPurchesStockOrder" Width="1.5" PointX="11.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

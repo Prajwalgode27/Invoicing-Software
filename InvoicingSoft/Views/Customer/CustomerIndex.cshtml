@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "CustomerIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Customer.js"></script>
+
+<script>
+    var Franchisebutton = function () {
+        $("#customerpopup").modal('show');
+        $("#txtCustomerName").val("");
+        $("#txtMobile").val("");
+        $("#txtEmail").val("");
+        $("#txtGSTNo").val("");
+        $("#txtAddress").val("");
+        $("#txtCity").val("");
+        $("#txtState").val("");
+        $("#txtZipCode").val("");
+    }
+</script>
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+</style>
+<div class="col-md-12 text-end">
+    <button class="btn btn-primary" onclick="Franchisebutton()"><i class="fa fa-user-circle"></i> &nbsp;Add Customer</button>
+</div>
+
+<section class="section">
+    <div>
+        <div class="card p-3">
+            <div class="row my-2 mt-1">
+
+            </div>
+            <div class="table-responsive">
+                <table id="tblCustomer" class="table table-bordered table-hover" style="width:100%">
+                    <thead class="text-white bg-dark">
+                        <tr>
+                            <td class="text-white bg-dark"> Customer Name</td>
+                            <td class="text-white bg-dark">Mobile No</td>
+                            <td class="text-white bg-dark">GST</td>
+                            <td class="text-white bg-dark"> Address</td>
+                            <td class="text-white bg-dark"> City</td>
+                            <td class="text-white bg-dark"></td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="customerpopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title">Add Customer</h5>
+                <!-- Floating Labels Form -->
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <input type="hidden" class="form-control" id="hdnId">
+                        <input type="hidden" class="form-control" id="hdnMasterId">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtCustomerName" placeholder="Name">
+                            <label for="floatingEmail">Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtMobile" placeholder="Mobile No">
+                            <label for="floatingName">  Mobile No</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtEmail" placeholder="  Mobile No ">
+                            <label for="floatingName"> Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="txtGSTNo" placeholder="GST No">
+                            <label for="floatingEmail">GST No</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Address" id="txtAddress" style="height: 100px;"></textarea>
+                                    <label for="floatingTextarea">Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtCity" placeholder="City">
+                                            <label for="floatingCity">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtState" placeholder="State">
+                                            <label for="floatingCity">State</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="txtZipCode" placeholder="Zip Code">
+                                            <label for="floatingCity">Zip Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="SaveCustomer()">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form><!-- End floating Labels Form -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div id="CustomerDetailsModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h5 class="card-title">Customer Details</h5>
+                <div class="card-body" id="CustomerDetails">
+                    <div class="col-sm-12">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js("#tblCustomer").DataTable({
+            "searching": true,
+            //   "scrollY": 355,
+            "scrollX": 355,
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "responsive": true,
+            "fixedHeader": true,
+        });
+
+
+    });
+</script>
+
+
+
+
+
+

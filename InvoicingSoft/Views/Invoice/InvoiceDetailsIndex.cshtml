@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "InvoiceDetailsIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Invoice.js"></script>
+<input type="hidden" id="invoicedetailsid" value="@ViewBag.InvoiceNo" />
+<input type="hidden" id="lblInvoiceNo" value="@ViewBag.InvoiceNo" />
+<input type="hidden" id="isPrint" value="@ViewBag.IsPrint" />
+
+
+<div class="container" id="printableArea">
+    <h5 class="text-center">
+        <span style="border-bottom: 1px solid black;">GST TAX INVOICE</span>
+    </h5>
+    <table id="tblinvoiceorder" class="table table-bordered" style="border-color: black;">
+        <thead>
+            <tr class="text-center">
+                <td colspan="14">
+                    <h5>ALABHYA TRADERS</h5>
+                    <span>
+                        Plot no 17, ward No.3, near vyankatesh patsanstha, durga nagar, hingna road, nagpur.
+                        440016-8208724560
+                    </span> <br>
+                    <div class="d-flex justify-content-evenly">
+                        <div>GST No.: 27AWIPK1888J1ZZ</div>
+                        <div>FSSAI No. : 11521056000407</div>
+                        <div>29/09/23</div>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <label>To M/S :</label> &nbsp;<span id="lblCustomerName"></span><br />
+                    <label>Address :</label> &nbsp;<span id="lblAddress"> </span><br>
+                    <label>Mobile :</label> &nbsp;<span id="lblMobile"> </span><br>
+                    <label>GST NO. :</label> &nbsp;<span id="lblGSTNo"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <span>PREV. BAL :0.00</span>
+
+                </td>
+                <td colspan="7">
+                    <label>INVOICE No : </label>  <span id="spnInvoiceNo"></span> <br>
+                    <label>INVOICE DATE. :</label>  <span id="lblCrateDate"></span> <br>
+
+                    <span>VEHICLE NO. :</span><br>
+                    <label>STATE : </label>  <span id="lblState"></span>&nbsp;&nbsp;&nbsp;<label>PINCODE : </label>  <span id="lblZipCode"></span><br>
+                </td>
+
+            </tr>
+
+            <tr>
+                @*<th>NO</th>*@
+                <th>PERTICULAR</th>
+                <th>UOM</th>
+                <th>HSN</th>
+                <th>GST</th>
+                <th>M.R.P.</th>
+                <th>RATE</th>
+
+                <th>QTY.</th>
+                <th>AMOUNT</th>
+                <th>DIS.</th>
+                <th>CGST</th>
+                <th>SGST</th>
+                <th>CESS</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+
+    </table>
+    <table class="table table-bordered" style="border-color: black; margin-top: -18px; ">
+        <tbody>
+            <tr>
+                <th colspan="4">
+
+                    <span id="wordtotalamt"></span>
+                </th>
+
+                <th id="lblQuantity"></th>
+                <td colspan="4"></td>
+                <th colspan="3">TAXABLE AMOUNT</th>
+                <td id="lblTaxAmount" colspan="2"></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="col-sm-12">
+        <div class="row" style="margin-right:-53px">
+            <div class="col-sm-7" style="margin-right:-25px;">
+                <table class="table table-bordered" style="border-color: black; margin-top: -18px; ">
+                    <tr>
+                        <td rowspan="6" colspan="5">
+                            I/We hereby certify that my/our registration certificate under GST Act 2017 is im force on the dare on which the sale of goods specified in this tax invoice is made by me/us & that the transaction of sale covered by this tax invoice has
+                            been affected by melus and it shall Il be accounted ted for for in in the the turnover tu of sale
+                            while filing of return & due tax in any payable on the sale has been paid or
+                            shall be paid.                <br><br><br><br>
+                            <div class="d-flex justify-content-around" style="margin-bottom:-11px;">
+                                <div>Customer Sign</div>
+                                <div>Authorised Signatory</div>
+                            </div>
+                            <br />
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="col-sm-3" style="margin-right:-25px;">
+                <table class="table table-bordered" style="border-color: black; margin-top: -18px; ">
+                    <thead>
+                        <tr>
+                            <th>GST</th>
+                            <th>AMT.</th>
+                            <th>CGST</th>
+                            <th>SGST</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbgstDetails"></tbody>
+
+                    @*<tr>
+                        <th>0%</th>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+
+                    </tr>
+                    <tr>
+                        <th>5%</th>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+
+                    </tr>
+                    <tr>
+                        <th>12%</th>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+
+                    </tr>
+                    <tr>
+                        <th>18%</th>
+                        <td id="Tax"></td>
+                        <td id="CGST"></td>
+                        <td id="SGST"></td>
+
+                    </tr>
+                    <tr>
+                        <th>28%</th>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+
+                    </tr>*@
+
+
+                </table>
+            </div>
+            @*<div class="col-sm-2">
+                <table class="table table-bordered" style="border-color: black; margin-top: -18px; ">
+
+                </table>
+            </div>*@
+            <div class="col-sm-2">
+                <table class="table table-bordered" style="border-color: black; margin-top: -18px; ">
+                    <tr>
+                        <th colspan="3">DISCOUNT</th>
+                        <td id="lblDiscount" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">CGST </th>
+                        <td id="lblCGSTAmount" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">SGST</th>
+                        <td id="lblSGSTAmount" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">OTHER </th>
+                        <td id="lblOtherCharge" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">CESS</th>
+                        <td id="lblCESSAmount" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">TOTAL</th>
+                        <td id="TotalAmount" colspan="2"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <label colspan="14" class="text-center">Please Check Your Bill.</label>
+
+    </div>
+</div>

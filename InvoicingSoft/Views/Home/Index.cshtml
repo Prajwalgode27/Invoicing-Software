@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Window Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showCategory()">Open Popup</button>
+
+    <div class="popup" id="popAddCategory">
+        <h2>This is a Popup Window</h2>
+        <p>You can put any content you want here.</p>
+        <button onclick="closePopup()">Close Popup</button>
+    </div>
+
+    <script>
+        // Define openPopup function
+        function openPopup() {
+            $("#popAddCategory").fadeIn();
+        }
+
+        // Define closePopup function
+        function closePopup() {
+            $("#popAddCategory").fadeOut();
+        }
+
+        // Usage: Open Popup
+        function showCategory() {
+            openPopup();
+        }
+    </script>
+
+</body>
+</html>

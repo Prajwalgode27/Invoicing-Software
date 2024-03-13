@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "PackageIndex";
+    Layout = "~/Views/Shared/_Layout -Admin.cshtml";
+}
+
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+</style>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Page/Package.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+<script>
+
+    var js = jQuery.noConflict(true);
+
+    js(document).ready(function () {
+
+        js('#tblPackage').DataTable({
+
+            "searching": true,
+
+            //   "scrollY": 355,
+
+            "paging": true,
+
+            "ordering": true,
+
+            "info": true,
+
+            "responsive": true
+
+        });
+
+    });
+
+
+</script>
+
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-4">
+            <section>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Package Form</h5>
+
+                        <!-- Floating Labels Form -->
+                        <form class="row g-3 ">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="hidden"id="hdId" />
+                                    <input type="text" class="form-control" id="txtTitle" placeholder="Your Name">
+                                    <label for="floatingName">Title</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="file" class="form-control" id="Photo">
+                                    <label for="floatingName">Photo</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="txtDesc" placeholder="Your Email">
+                                    <label for="floatingEmail">Description</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="txtDuration" placeholder="Your Email">
+                                    <label for="floatingEmail">Duration</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="txtAmount" placeholder="Amount">
+                                    <label for="floatingCity">Amount</label>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" onclick="SavePackage()" class="btn btn-primary">Submit</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form><!-- End floating Labels Form -->
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-sm-8">
+            <section>
+
+                <div>
+
+                    <div class="card p-3">
+                        <div class="table-responsive">
+
+                            <table id="tblPackage" class="table table-bordered table-hover table-striped" style="width:100%;">
+
+                                <thead class="text-white bg-dark">
+
+                                    <tr>
+
+                                        <td class="text-white bg-dark"> title</td>
+
+                                        <td class="text-white bg-dark">Photo</td>
+
+                                        <td class="text-white bg-dark">Desription</td>
+
+                                        <td class="text-white bg-dark">Duration</td>
+
+                                        <td class="text-white bg-dark">Amount</td>
+
+                                        <td class="text-white bg-dark"></td>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody></tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+<div id="PackageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body" id="DetailPackage">
+
+                </div>
+                <div class="modal-footer" style="margin-right:100px">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

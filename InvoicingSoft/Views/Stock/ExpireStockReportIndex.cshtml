@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "ExpireStockReportIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Stock.js"></script>
+
+
+<section>
+    <div class="card p-4">
+        <div class="table-responsive">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3 class="card-title" id="lblTotalExpireStock"></h3>
+
+
+                    </div>
+                    <div class="col-sm-6  text-end">
+                        <label class="card-title">Total Quantity:</label>
+                        <button class="btn btn-success" id="lblTotalExpireQuantity"></button>
+                        <label class="card-title">Total Stock Amount:</label>
+                        <button class="btn btn-success" id="lblTotalExpireStockAmount"></button>
+                        @*<button class="btn btn-primary btn-sm">Next&nbsp;<i class="bi bi-arrow-right-square-fill"></i></button>*@
+                        @*<button>120000</button>*@
+                    </div>
+                </div>
+            </div>
+
+            <table id="tblExpireStock" class="table table-bordered table-hover" style="width:100%">
+                <thead class="text-white bg-dark">
+                    <tr>
+                        <td class="text-white bg-dark">Product(No)</td>
+                        <td class="text-white bg-dark">Invoice No</td>
+                        <td class="text-white bg-dark">Product</td>
+                        <td class="text-white bg-dark"> MRP </td>
+                        <td class="text-white bg-dark">Manufacturing Date </td>
+                        <td class="text-white bg-dark">Expire Date </td>
+                        <td class="text-white bg-dark">Quantity </td>
+                        <td class="text-white bg-dark">Rate Value</td>
+                        <td class="text-white bg-dark">Taxable Amount</td>
+                        <td class="text-white bg-dark">GST</td>
+                        <td class="text-white bg-dark">CGST Amount</td>
+                        <td class="text-white bg-dark">SGST Amount</td>
+                        <td class="text-white bg-dark">Total Amount</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+
+<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.css" rel="stylesheet" />
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tblExpireStock').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'pdf',
+                title: 'Expire Stock Report',
+                filename: 'Expire Stock Report' + getCurrentDate(),
+            }, {
+                extend: 'excel',
+                title: 'Expire Stock Report',
+                filename: 'Expire Stock Report' + getCurrentDate(),
+            }, {
+                extend: 'csv',
+                filename: 'Expire Stock Report' + getCurrentDate(),
+            }],
+            "searching": true,
+            //   "scrollY": 355,
+            "scrollX": 355,
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "responsive": true,
+            "fixedHeader": true,
+        });
+    });
+
+    function getCurrentDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = (date.getMonth() + 1).toString().padStart(2, '0');
+        var day = date.getDate().toString().padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+
+</script>
+
+
+
+@*<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>*@
+<!--<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tblExpireStock').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'pdf',
+                title: 'Stock Report',
+                filename: 'Stock Report'
+            }, {
+                extend: 'excel',
+                title: 'Customized EXCEL Title',
+                filename: 'Stock Report'
+            }, {
+                extend: 'csv',
+                filename: 'Stock Report'
+            },]
+        });
+
+    });
+    var invoice = function () {
+        $("#SubscriptionModal").modal('show');
+
+    }
+</script>-->

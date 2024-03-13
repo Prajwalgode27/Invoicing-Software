@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout -Admin.cshtml";
+}
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+</style>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Page/Membership.js"></script>
+<script src="~/Content/Page/Package.js"></script>
+<script src="~/Content/Page/Member.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+<script>
+
+    var js = jQuery.noConflict(true);
+
+    js(document).ready(function () {
+
+        js('#tblMembership').DataTable({
+
+            "searching": true,
+
+            //   "scrollY": 355,
+
+            "paging": true,
+
+            "ordering": true,
+
+            "info": true,
+
+            "responsive": true
+
+        });
+
+    });
+
+
+</script>
+<section>
+
+    <div>
+
+        <div class="card p-3">
+
+            <div class="row my-2 mt-1">
+
+                <div class="col-md-12 text-end">
+
+                    @*<button class="btn btn-info" onclick="AddEvent()"><i class="fa fa-user-circle" data-bs-target="#staticBackdrop"></i> &nbsp;  Add Member</button>*@
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Add Subscription
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table id="tblMembership" class="table table-bordered table-hover table-striped" style="width:100%;">
+
+                    <thead class="text-white bg-dark">
+
+                        <tr>
+
+                            <td class="text-white bg-dark"> Name</td>
+
+                            <td class="text-white bg-dark">Memership</td>
+
+                            @*<td class="text-white bg-dark">Photo</td>*@
+
+                            <td class="text-white bg-dark">Start Date</td>
+
+                            @*<td class="text-white bg-dark">Start Date</td>*@
+
+                            <td class="text-white bg-dark">Due Date</td>
+
+                            <td class="text-white bg-dark">Amount</td>
+
+                            <td class="text-white bg-dark">Discount</td>
+
+                            <td class="text-white bg-dark">Total Amount</td>
+                            <td class="text-white bg-dark">Active</td>
+                            <td class="text-white bg-dark"></td>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+                       
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="Container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Membership Form</h5>
+
+                            <!-- Floating Labels Form -->
+                            <form class="row g-3 ">
+
+
+                                <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="hidden" id="hdId">
+                                           
+                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <select type="text" class="form-control" id="ddlMember" placeholder="Your Name"></select>
+                                        <label for="floatingName">Member Name</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select type="text" class="form-control" id="dPackage" placeholder="Your Email"></select>
+                                        <label for="floatingEmail">Membership</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="txtSdate">
+                                        <label for="floatingStartDate">Start Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="txtddate">
+                                        <label for="floatingStartDate">Due Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="txtamount" placeholder="Amount">
+                                            <label for="floatingCity">Amount</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="txtdiscount" placeholder="txtdiscount">
+                                            <label for="floatingCity">Discount</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="txttotalAmount" placeholder="Total Amount" readonly>
+                                        <label for="floatingZip">Total Amount</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style=" width: 49.666667%; ">
+                                    <input type="checkbox" id="floatingIsActive" style="display: inline-block;">
+                                    <a href="#">Term And Condition</a>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" onclick="SaveMem()" class="btn btn-primary">Submit</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form><!-- End floating Labels Form -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div id="CategoryModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body bg-danger" id="DetailMem">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

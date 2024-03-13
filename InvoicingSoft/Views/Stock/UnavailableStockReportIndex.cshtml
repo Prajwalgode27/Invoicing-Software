@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "UnavailableStockReportIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Stock.js"></script>
+<section>
+    <div class="card p-4">
+        <h5 class="card-title" id="lblTotalUnAvailableStock"></h5>
+
+        <div class="table-responsive">
+            <table id="tblGetUnavalibleStockList" class="table table-bordered table-hover" style="width:100%">
+                <thead class="text-white bg-dark">
+                    <tr>
+                        <td class="text-white bg-dark">Product</td>
+                        <td class="text-white bg-dark">Image</td>
+                        <td class="text-white bg-dark"> MRP </td>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@*<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>*@
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tblGetUnavalibleStockList').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'pdf',
+                title: 'Stock Report',
+                filename: 'Stock Report'
+            }, {
+                extend: 'excel',
+                title: 'Customized EXCEL Title',
+                filename: 'Stock Report'
+            }, {
+                extend: 'csv',
+                filename: 'Stock Report'
+            }],
+            "searching": true,
+            //   "scrollY": 355,
+            "scrollX": 355,
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "responsive": true,
+            "fixedHeader": true,
+        });
+
+    });
+    var invoice = function () {
+        $("#SubscriptionModal").modal('show');
+
+    }
+</script>

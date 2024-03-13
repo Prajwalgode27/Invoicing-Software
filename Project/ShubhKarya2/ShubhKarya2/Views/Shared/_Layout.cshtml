@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ShubhKarya</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--Favicon-->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!--Google Web Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!--Libraries Stylesheet-->
+    <link href="~/Content/User/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Content/User/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!--Customized Bootstrap Stylesheet-->
+    <link href="~/Content/User/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Page/Package.js"></script>
+    <style>
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .category-menu {
+            position: relative;
+        }
+
+            .category-menu li a:hover {
+                background-color:#FD2C79
+                display: block;
+                color: white;
+                text-decoration: none;
+            }
+
+            .category-menu li a {
+                display: block;
+                color:#FD2C79
+            }
+
+            .category-menu ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 10px;
+                display: none;
+            }
+
+            .category-menu:hover ul {
+                display: block;
+            }
+    </style>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Page/Package.js"></script>
+    <script>
+        var LoginPopup = function () {
+            $("#UpdateModal").modal('show');
+        }
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <!-- Topbar Start -->
+        <div class="container-fluid bg-primary py-3 d-none d-md-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-white pr-3" href="">FAQs</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white px-3" href="">Help</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white pl-3" href="">Support</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-lg-right">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-white px-3" href="">
+                                <i class="fa fa-phone"></i>
+                            </a>
+                            <a class="text-white px-3" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-white px-3" href="">
+
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            @*<a class="text-white px-3" href="">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>*@
+                            <a class="text-white px-3" href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="text-white pl-3" href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+        <!-- Navbar Start -->
+        <div class="container-fluid position-relative nav-bar p-0">
+            <div class="container-xl position-relative p-0 px-lg-0" style="z-index: 9;">
+                <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
+                    <a href="=index.html" class="navbar-brand d-block d-lg-none" style=" margin-bottom: -42px;">
+
+                        <h1 class="m-0 display-4 text-primary">
+                            <span class="text-secondary"></span>
+                            <img class="w-100" src="~/Content/Img/Logo.jpg" alt="not found" style="margin-top:13px;height:60px" />
+                          
+                        </h1>    
+                 
+
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between"
+                         id="navbarCollapse">
+
+
+                        <div class="navbar-nav ml-auto py-0">
+
+
+                            <a href="~/Home/Index" class="nav-item nav-link active">Home</a>
+                            <a href="~/About/AboutIndex" class="nav-item nav-link active">About</a>
+                            <div class="category-menu">
+                                <a href="#" class="nav-item nav-link active">Membership</a>
+                                <ul class="dropdown-menu" style="width: 250px;" id="ddlPackage">
+                                </ul>
+
+                                @*<select  id="ddlPackage">
+
+        </select>*@
+                                
+
+                            </div>
+                            <a href="~/Story/StoryIndex" class="nav-item nav-link active" style="color: #FD2C79">Story</a>
+                            <a href="#" class="navbar-brand mx-5 d-none d-lg-block">
+                                <img class="w-100" src="~/Content/Img/Logo.jpg" alt="not found" style="margin-top:13px;height:60px"  />
+                            </a>
+                            <a href="~/Gallery/GalleryIndex" class="nav-item nav-link active" style="color: #FD2C79">Gallery</a>
+                            <a href="~/Feedback/FeedbackIndex" class="nav-item nav-link active" style="color: #FD2C79">Feedback</a>
+                            <a href="~/Contact/ContactIndex" class="nav-item nav-link active" style="color: #FD2C79">Contact</a>
+                            <a href="~/Member/ProfileIndex" class="nav-item nav-link active" style="color: #FD2C79">Profile</a>
+
+                        </div>
+                    </div>
+
+
+
+                </nav>
+            </div>
+
+
+        </div>
+
+    </nav>
+    <!-- Navbar End -->
+    <nav class="nav">
+        <!-- Topbar Start -->
+        <div class="container-fluid bg-dark py-3 d-none d-md-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-white pr-3" href="">FAQs</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white px-3" href="">Help</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white pl-3" href="">Support</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-lg-right text-white">
+                        <div class="d-inline-flex align-items-center">
+                            <ul class="list-inline mb-0 d-flex align-items-center justify-content-end ">
+                                <li class="list-inline-item mr-3 text-white pr-3 border-right text-reset opacity-60">
+                                    <span> Help Line</span>
+                                    <span>+91-8956986664</span>
+                                </li>
+                                <li class="list-inline-item ml-4">
+                                    <a class="text-reset opacity-60 btnTranspernt " onclick="LoginPopup()">Log In</a>
+                                </li>
+                                <li class="list-inline-item ml-3">
+                                    <a class="btn btn-sm bg-primary text-white fw-600 py-1 border" data-bs-toggle="modal" data-bs-target="#exampleModal">Registration</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Topbar End -->
+        <!-- Navbar Start -->
+        <div class="container-fluid position-relative nav-bar p-0">
+            <div class="container-xl position-relative p-0 px-lg-0" style="z-index: 9;">
+                <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
+                    <a href="=index.html" class="navbar-brand d-block d-lg-none">
+
+                        <h1 class="m-0 display-4 text-primary">
+                            <span class="text-secondary"></span>
+                            <img class="w-100" src="~/Content/Img/Logo.jpg" alt="not found" style="margin-top:13px;height:60px" />
+                        </h1>
+                    </a>
+                    <div style="margin-top: -70px;">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" style="margin-left: 282px">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                   
+                    <div class="collapse navbar-collapse justify-content-between" style="background-color:black">
+                         
+
+
+                        <div class="navbar-nav ml-auto py-0">
+
+
+                            <a href="~/Home/Index" class="nav-item nav-link active">Home</a>
+                            <a href="~/About/AboutIndex" class="nav-item nav-link active">About</a>
+                            <div class="category-menu">
+                                <a href="#" class="nav-item nav-link active">Membership</a>
+                                <ul class="dropdown-menu" style="width: 250px;" id="ddlPackage">
+                                </ul>
+
+                            </div>
+                            <a href="~/Story/StoryIndex" class="nav-item nav-link active" style="color: #FD2C79">Story</a>
+                            <a href="#" class="navbar-brand mx-5 d-none d-lg-block">
+                                <img class="w-100" src="~/Content/Img/Logo.jpg" alt="not found" style="margin-top:13px;height:60px" />
+                            </a>
+                            <a href="~/Gallery/GalleryIndex" class="nav-item nav-link active" style="color: #FD2C79">Gallery</a>
+                            <a href="~/Feedback/FeedbackIndex" class="nav-item nav-link active" style="color: #FD2C79">Feedback</a>
+                            <a href="~/Contact/ContactIndex" class="nav-item nav-link active" style="color: #FD2C79">Contact</a>
+                            <a href="~/Member/ProfileIndex" class="nav-item nav-link active" style="color: #FD2C79">Profile</a>
+
+                        </div>
+                    </div>
+
+
+                </nav>
+            </div>
+
+
+        </div>
+
+    </nav>
+
+    <div id="UpdateModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card-body">
+                        @model ShubhKarya2.Models.RegModel
+                        @using (Html.BeginForm("UserLogin", "Home", FormMethod.Post, new { @class = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                                            <div class="d-flex justify-content-center py-4">
+                                                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                                    <img src="assets/img/logo.png" alt="" style="height:60px">
+
+                                                </a>
+                                            </div><!-- End Logo -->
+
+                                            <div class="card mb-3" style=" width: 320px;">
+
+                                                <div class="card-body">
+
+                                                    <div class="pt-4 pb-2">
+                                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                                        <p class="text-center small">Enter your username & password to login</p>
+                                                    </div>
+
+                                                    <form class="row g-3 needs-validation" novalidate>
+
+                                                        <div class="col-12">
+                                                            <label for="yourUsername" class="form-label">Username</label>
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text" id="inputGroupPrepend"></span>
+                                                                <input type="text" name="Mobile" class="form-control" placeholder="Mobile or Email" required>
+                                                                <div class="invalid-feedback">Please enter your username.</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="yourPassword" class="form-label">Password</label>
+                                                            <input type="password" name="Password" class="form-control" required>
+                                                            <div class="invalid-feedback">Please enter your password!</div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <button class="btn btn-primary w-100" style="background-color:#E75480" type="submit">Login</button>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <p class="small mb-0">Don't have account? <a style="color:blue" data-bs-toggle="modal" data-bs-target="#exampleModal">Create an account</a></p>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="credits">
+                                                <!-- All the links in the footer should remain intact. -->
+                                                <!-- You can delete the links only if you purchased the pro version. -->
+                                                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                                                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                                                Designed by <a href="https://orgsoft.in/">OrgSoft</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+                        }
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <div class="container-fluid" style="background-color:black; display:flex; justify-content:end; padding-top:20px; padding-bottom:20px; margin-top:20px;">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="text-light" style="font-weight: bold; font-size: 15px; border-bottom: 2px solid white">Address</span><br />
+                <div style="margin-top: 15px;">
+                    <span class="text-light"style="font-size: 11px;"><i class="fa fa-map-marker-alt me-3"></i>Nagpur Maharastra</span><br /><br />
+                    <span class="text-light"style="font-size: 11px;"><i class="fa fa-phone-alt me-3"></i>#######</span><br /><br />
+                    <span class="text-light"style="font-size: 11px;"><i class="fa fa-envelope me-3"></i>########</span><br /><br />
+                </div>
+                <div class="d-flex" style="margin:2px;">
+                    <a class="btn btn-outline-light btn-social"style="font-size: 11px;" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social"style="font-size: 11px;" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social"style="font-size: 11px;" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social"style="font-size: 11px;" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social"style="font-size: 11px;" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="text-light" style="font-weight: bold; font-size: 15px; border-bottom: 2px solid white">Quick Links</span><br />
+                <span><a class="btn btn-link text-light" style="font-size: 11px;"href="">About Us</a></span>
+                <span><a class="btn btn-link text-light"style="font-size: 11px;" href="">Privacy Policy</a></span>
+                <span><a class="btn btn-link text-light"style="font-size: 11px;" href="">Contact Us</a></span>
+                <span><a class="btn btn-link text-light"style="font-size: 11px;" href="">Terms & Condition</a></span>
+                <span><a class="btn btn-link text-light"style="font-size: 11px;" href="">Reservation</a></span>
+
+
+            </div>
+            <div class="col-sm-4">
+                <span class="text-light" style="font-weight: bold; font-size: 11px; border-bottom: 2px solid white">Opening</span><br /><br />
+                <span class="text-light"style="font-size: 11px;" >Monday-Saturday</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="text-light"style="font-size: 11px;" >Sunday</span><br />
+                <span class="text-light"style="font-size: 11px;" >09AM - 09PM</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="text-light"style="font-size: 11px;" >10AM - 08PM</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/User/lib/easing/easing.min.js"></script>
+    <script src="~/Content/User/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Content/User/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Content/User/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/Content/User/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="~/Content/User/mail/jqBootstrapValidation.min.js"></script>
+    <script src="~/Content/User/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Content/User/js/main.js"></script>
+
+</body>
+</html>

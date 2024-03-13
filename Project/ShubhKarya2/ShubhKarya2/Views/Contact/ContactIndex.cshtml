@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "ContactIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+
+    @@media (max-width: 767px) {
+        .col-sm-3 {
+            - width: 50%;
+        }
+
+        .ProductImage {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 15px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            padding: 7px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .MainContainer {
+            margin-top: 110px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+
+
+        .ProductImage {
+            width: 150px;
+            height: 150px;
+            border: 15px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 20px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            margin-top: 24px;
+        }
+
+        .MainContainer {
+            margin-top: 200px;
+        }
+    }
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+
+
+
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3 mt-lg-5">Contact</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="~/Home/Index">Home</a></p>
+            <i class="fa fa-circle px-3"></i>
+            <p class="m-0">Contact</p>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+@*<h1 class="section-title position-relative text-center mb-5">Location</h1>*@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6 mb-4">
+            <div class="card pb-5 shadow-lg mb-5 bg-body-tertiary">
+                <div class="card-header" style="border-bottom:1px solid deeppink;">
+                    <h3 class="text-center" style="color: #9c0000">Contact Us</h3>
+                </div>
+                <div class="card-body row mt-3">
+                    <div class="col-sm-12">
+                        <input type="text" style="max-width:100%" class="form-control p-4 mb-4" id="name" placeholder="Full Name" />
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="email" style="max-width:100%" class="form-control p-4 mb-4" placeholder="Mobile Number" />
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" style="max-width:100%" class="form-control p-4 mb-4" placeholder="Email Id" />
+                    </div>
+                    <div class="col-sm-12">
+                        <textarea style="max-width:100%" class="form-control p-4 mb-4" placeholder="Message"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-evenly">
+                        <button class="btn btn-primary py-2 px-5" type="submit" id="sendMessageButton">Submit</button>
+                        <button class="btn btn-primary py-2 px-5" type="reset" id="sendMessageButton">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card shadow-lg mb-5 bg-body-tertiary">
+                <div class="card-header" style="border-bottom:1px solid deeppink;">
+                    <h3 class="text-center" style="color: #9c0000">Location</h3>
+                </div>
+                <div class="card-body">
+                    <iframe class="embed-responsive" height="375" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.603138527916!2d77.04972237438886!3d21.088507185725497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd71ba4eddb2cd3%3A0x3344da2b4bafdb26!2sBhavnas%20Cake!5e0!3m2!1sen!2sin!4v1696672304251!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

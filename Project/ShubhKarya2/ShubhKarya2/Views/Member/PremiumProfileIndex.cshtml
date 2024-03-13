@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "PremiumProfileIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Page/Member.js"></script>
+<script src="~/Content/Page/Membership.js"></script>
+<script src="~/Content/Page/Package.js"></script>
+<input type="hidden" value="@ViewBag.MemberId" id="hdnMemberId" />
+
+<style>
+
+    @@media (max-width: 767px) {
+
+
+        .ProductImage {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 15px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            padding: 7px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .MainContainer {
+            margin-top: 110px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+
+
+        .ProductImage {
+            width: 150px;
+            height: 150px;
+            border: 15px solid #9c0000;
+            border-radius: 50%;
+        }
+
+        .ProductName {
+            color: #9c0000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .ProductPrice {
+            color: black;
+            font-size: 20px;
+            font-weight: normal
+        }
+
+        .btn-buy-now {
+            margin-top: 24px;
+        }
+
+        .MainContainer {
+            margin-top: 200px;
+        }
+    }
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    .Font {
+        font-family: "Sofia", sans-serif;
+    }
+</style>
+
+
+<div class="container pt-4">
+    <div class="card shadow-lg mb-5 bg-body-tertiary" style="border-radius:20px;">
+        <div class="card-body">
+            <h2 class="position-relative text-center" style="color:#9c0000">Details </h2>
+        </div>
+    </div>
+</div>
+
+<h1 class="section-title position-relative text-center mb-5">Details</h1>
+
+<div class="container" >
+    <div class="row" style="margin-top:20px;"id="UserProfile">
+
+    </div>
+
+</div>

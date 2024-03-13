@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, san-serif, Times New Roman
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><p style="color:rgb(47,83,149); margin: 10px; font-size: 6rem">INVOICE</p></td>
+                <td></td>
+                <td><img src={{logourl}} alt='SFM' height="100px"></img></td>
+            </tr>
+            <tr><td></td><td></td></tr>
+            <tr>
+                <td style=" vertical-align:top">
+                    <div>
+                        <h4 style=" color:rgb(47,83,149)">Invoice Number</h4><div>{{invoice.invoiceNo}}</div>
+                        <h4 style=" color:rgb(47,83,149)">Date Of Issue</h4><p>{% now "m/d/y" %}</p>
+                    </div>
+                </td>
+                <td style=" vertical-align:top">
+                    <div>
+                        <h4 style=" color:rgb(47,83,149)">SFM Dropshipping LLC</h4>
+                        <table>
+                            <tr><td>2050 North Andrews Avenue</td></tr>
+                            <tr><td>Unit 102 PMB1083</td></tr>
+                            <tr><td>Pompano Beach, FL 33069</td></tr>
+                            <tr><td></td></tr>
+                            <tr><td></td></tr>
+                        </table>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr><td></td><td></td></tr>
+            <tr>
+                <td style=" vertical-align:top">
+                    <div>
+                        <h4 style=" color:rgb(47,83,149)">Billed To</h4>
+                        <table>
+                            {% if store %}
+                            <tr><td>{{store.userFullName}}</td></tr> {% endif %}
+                            <tr><td>{{invoice.storeName}}</td></tr>
+                            {% if store %}
+                            <tr><td>{{store.addressLine1}}</td></tr> {% endif %}
+                            {% if store %}
+                            <tr><td>{{store.addressLine2}}</td></tr> {% endif %}
+                            {% if store %}
+                            <tr><td>{{store.city}}, {{invoiceDetails.store.state}}</td></tr> {% endif %}
+                            {% if store %}
+                            <tr><td>{{store.zipCode}}</td></tr> {% endif %}
+                            {% if store %}
+                            <tr><td>{{store.emailAddress}}</td></tr> {% endif %}
+                        </table>
+                    </div>
+                </td>
+                <td style=" vertical-align:top">
+                    <div>
+                        <h4 style=" color:rgb(47,83,149)">Overview</h4>
+                        <table>
+                            <tr>
+                                <td>Start Date</td>
+                                <td>{{invoice.startDate|date:"m/d/y"}}</td>
+                            </tr>
+                            <tr>
+                                <td>End Date</td>
+                                <td>{{invoice.endDate|date:"m/d/y"}}</td>
+                            </tr>
+                            <tr>
+                                <td>Order Count</td>
+                                <td>{{ordercount}}</td>
+                            </tr>
+                            <tr>
+                                <td>Item Count</td>
+                                <td>{{itemcount}}</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice Total</td>
+                                <td>$ {{invoice.total}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr><td></td><td></td></tr>
+        </table>
+        <br />
+        <table class="itemlist" style=" width:800px; ; border-collapse:collapse; text-align:left; margin-top:10px; margin-bottom:20px">
+            <tr style="color: white; background: rgb(47,83,148)">
+                <th style="text-align:left; padding-top:5px; padding-left:2px">Ship Date</th>
+                <th style="text-align:left; padding-top:5px">Order Date</th>
+                <th style="text-align:left; padding-top:5px">Order Number</th>
+                <th style="text-align:left; padding-top:5px">Customer</th>
+                <th style="text-align:left; padding-top:5px">Description</th>
+                <th style="text-align:right; padding-top:5px; padding-right:2px; background: rgb(204, 102, 0)">Amount</th>
+            </tr>
+            {% for i in items %}
+            <tr>
+                <td style="width: 70px; padding-top: 5px">{{i.shipDate|date:"m/d/y"}}</td>
+                <td style="width: 70px; padding-top: 5px">{{i.orderDate|date:"m/d/y"}}</td>
+                <td style="width: 80px; padding-top: 5px">{{i.orderNo}}</td>
+                <td style="width: 150px; padding-top: 5px; white-space: nowrap; overflow: hidden">{{i.customer}}</td>
+                <td style="padding-top: 5px; white-space: nowrap; overflow: hidden">{{i.description}}</td>
+                <td style="text-align:right; width: 60px; padding-top: 5px">${{i.amount}}</td>
+            </tr>
+            {% endfor %}
+            <tr style=" font-weight:bold; border-top:1px solid rgb(47,83,149); padding-top: 5px">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right">Subtotal</td>
+                <td style="text-align:right; white-space: nowrap">${{invoice.subTotal}}</td>
+            </tr>
+            <tr style="font-weight:bold;">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right; border-bottom:1px solid rgb(47,83,149)">Discount</td>
+                <td style="text-align:right; border-bottom:1px solid rgb(47,83,149); white-space: nowrap">${{invoice.discount}}</td>
+            </tr>
+            <tr style="font-weight:bold; padding-top: 5px">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right">After Discount Total</td>
+                <td style="text-align:right; white-space: nowrap">${{afterdiscount}}</td>
+            </tr>
+            <tr style="font-weight:bold">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right">Tax Rate</td>
+                <td style="text-align:right; white-space: nowrap">{{invoice.taxrate}}%</td>
+            </tr>
+            <tr style="font-weight:bold">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right">Tax</td>
+                <td style="text-align:right; white-space: nowrap">${{taxamount}}</td>
+            </tr>
+            <tr style="font-weight:bold; padding-top: 5px">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right; background: rgb(47,83,148); color: white; font-size: 1.5rem">Total</td>
+                <td style="text-align:right; white-space: nowrap; background: rgb(47,83,148); color: white; font-size: 1.5rem">${{invoice.total}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
